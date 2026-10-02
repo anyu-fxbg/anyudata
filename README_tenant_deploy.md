@@ -9,7 +9,7 @@
 
 | 角色 | 位置 | 持有 | 职责 |
 |---|---|---|---|
-| 平台 | `gemidaojia.com/saas`（你） | 密钥、API Key、余额、充值 | 暴露 OpenAPI（`/saas/api/query/openapi/*`） |
+| 平台 | `api联系客服获取`（你） | 密钥、API Key、余额、充值 | 暴露 OpenAPI（`/saas/api/query/openapi/*`） |
 | 租户后端 | 租户服务器（`tenant_backend/`） | 平台 API Key、租户微信支付凭证、白标配置 | 订单、微信支付、调平台查、出报告 |
 | 租户前端 | 租户服务器（`tenant_frontend/`） | 无密钥 | C 端 H5 + **租户管理后台 `/admin`** |
 | nginx | 租户服务器 | 白标域名反代 | `/api`→后端， `/`→前端 |
@@ -26,7 +26,7 @@
 ## 一、平台侧（一次性）
 1. 登录平台控制台 → 开发者中心 → 生成 **API Key**。
 2. 充值余额（余额 / 充值只在平台侧，不走租户）。
-3. 把 `API 地址`（默认 `https://www.gemidaojia.com/saas/api`）+ **API Key** 交给租户。
+3. 把 `API 地址`（默认 `api联系客服获取`）+ **API Key** 交给租户。
 
 ## 二、配置租户后端
 ```
@@ -35,7 +35,7 @@ python manage.py migrate
 ADMIN_PASSWORD=你的后台密码 python manage.py init_tenant   # 建管理员(admin) + 写初始配置 + 导入套餐
 ```
 关键字段（仅作**首次种子值**，之后在后台界面改更方便）：
-- `PLATFORM_API_BASE`：默认 `https://www.gemidaojia.com/saas/api`
+- `PLATFORM_API_BASE`：默认 `api联系客服获取`
 - `PLATFORM_API_KEY`：平台发的 Key
 - `PLATFORM_MOCK`：先 `True` 联调（返回假报告、不打平台）；上线改 `False`
 - `TENANT_NAME` / `PRIMARY_COLOR` / `PUBLIC_BASE_URL`：白标

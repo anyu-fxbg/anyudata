@@ -9,7 +9,7 @@
 
 | 角色 | 位置 | 持有 | 职责 |
 |---|---|---|---|
-| 平台 | `gemidaojia.com/saas`（你） | 天远密钥、API Key、余额、充值 | 暴露 OpenAPI（`/saas/api/query/openapi/*`） |
+| 平台 | `gemidaojia.com/saas`（你） | 密钥、API Key、余额、充值 | 暴露 OpenAPI（`/saas/api/query/openapi/*`） |
 | 租户后端 | 租户服务器（`tenant_backend/`） | 平台 API Key、租户微信支付凭证、白标配置 | 订单、微信支付、调平台查、出报告 |
 | 租户前端 | 租户服务器（`tenant_frontend/`） | 无密钥 | C 端 H5 + **租户管理后台 `/admin`** |
 | nginx | 租户服务器 | 白标域名反代 | `/api`→后端， `/`→前端 |

@@ -1,13 +1,13 @@
-# 安遇数据查询 · 租户独立部署版（White-label Tenant Edition）
+# 安遇个人风险报告查询 · 租户独立部署版（White-label Tenant Edition）
 
-> 一套**可独立部署到租户自己服务器**、使用**租户自己域名与微信支付**的白标数据查询系统。
+> 一套**可独立部署到租户自己服务器**、使用**租户自己域名与微信支付**的白标风险报告查询系统。
 > 租户后端只通过**平台 API Key** 调用上游平台的 OpenAPI 查询数据，**绝不持有任何数据源密钥**。
 
 ---
 
 ## 一、项目简介
 
-本项目是「安遇大数据」SaaS 平台的**租户发行版**（Tenant / White-label Edition）。它把一套面向 C 端用户的「个人综合数据查询」业务，封装成一个**自包含、可一键交给下游代理商 / 企业客户独立运营**的部署包。
+本项目是「安遇大数据」SaaS 平台的**租户发行版**（Tenant / White-label Edition）。它把一套面向 C 端用户的「个人风险报告查询」业务，封装成一个**自包含、可一键交给下游代理商 / 企业客户独立运营**的部署包。
 
 核心定位：
 
@@ -50,7 +50,7 @@
                             │  仅通过 API Key 调用
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              平台 OpenAPI  (gemidaojia.com/saas/api)          │
+│              平台 OpenAPI  (api联系客户获取)          │
 │   持有数据源密钥 · 余额/充值 · 生成 API Key              │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -241,7 +241,7 @@ WantedBy=multi-user.target
 | `TENANT_LOGO_URL` | 品牌 Logo 地址 | 空 |
 | `PRIMARY_COLOR` | 主题色（白标） | `#6C63FF` |
 | `PUBLIC_BASE_URL` | 站点对外域名（回调 / 分享用） | `https://your-domain.com` |
-| `PLATFORM_API_BASE` | 上游平台 OpenAPI 地址 | `https://www.gemidaojia.com/saas/api` |
+| `PLATFORM_API_BASE` | 上游平台 OpenAPI 地址 | `api联系客服获取` |
 | `PLATFORM_API_KEY` | 平台发放的 API Key（**必填**，向平台方获取） | 空 |
 | `PLATFORM_MOCK` | `True` 联调返回假报告、不打平台；上线改 `False` | `True` |
 | `PACKAGES_JSON` | 对客套餐（`id` 须对应平台 `QueryConfig.id`，`price` 为租户定价，单位：分） | 见示例 |

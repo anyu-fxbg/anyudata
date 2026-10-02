@@ -1,0 +1,14 @@
+[Unit]
+Description=SaaS Backend (Django + Gunicorn)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/www/wwwroot/SaaS/backend
+ExecStart=/www/wwwroot/SaaS/backend/run.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

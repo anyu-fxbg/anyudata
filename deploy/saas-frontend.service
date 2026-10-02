@@ -1,0 +1,19 @@
+[Unit]
+Description=SaaS Frontend (Nuxt 3) on gemidaojia.com/saas
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/www/wwwroot/SaaS/frontend
+Environment=NODE_ENV=production
+Environment=PORT=3001
+Environment=HOST=127.0.0.1
+ExecStart=/usr/bin/node /www/wwwroot/SaaS/frontend/.output/server/index.mjs
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/saas-frontend.log
+StandardError=append:/var/log/saas-frontend.log
+
+[Install]
+WantedBy=multi-user.target

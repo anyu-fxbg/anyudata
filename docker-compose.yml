@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: ./tenant_backend
+    env_file: ./tenant_backend/.env
+    expose:
+      - "8000"
+    restart: unless-stopped
+
+  frontend:
+    build: ./tenant_frontend
+    expose:
+      - "3000"
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      # HTTPS 上线时改为 "443:443" 并挂载证书（见 README）
+    volumes:
+      - ./nginx/tenant.conf:/etc/nginx/conf.d/default.conf:ro
+      # - ./certs:/certs:ro      # 上线 HTTPS 时启用
+    depends_on:
+      - backend
+      - frontend
+    restart: unless-stopped

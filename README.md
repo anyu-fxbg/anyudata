@@ -24,7 +24,10 @@
 - **配置热更新**：品牌、套餐、支付、平台 Key 等既可在 `.env` 写种子值，也可在后台界面实时修改，**无需重启**。
 - **生产友好**：提供 Docker Compose、Nginx 反代模板、systemd 单元，SQLite / PostgreSQL 双数据库支持。
 
----
+---<img width="498" height="908" alt="首页" src="https://github.com/user-attachments/assets/8bad9504-1899-43dc-8cec-ed52ef22584d" />
+<img width="1122" height="22618" alt="示例报告" src="https://github.com/user-attachments/assets/7fd679e7-dffd-415b-ae7b-f0f66b2929d9" />
+
+
 
 ## 二、技术栈
 
